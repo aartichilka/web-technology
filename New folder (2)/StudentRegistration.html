@@ -1,0 +1,145 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Student Registration</title>
+<script language="javascript">
+function validate()
+{
+	 if (document.getElementById("id").value=="")
+	{
+		alert("Please Enter Enrollment Id");
+		document.getElementById("id").focus();
+		return false;
+	}
+	else if(document.getElementById("pass").value=="")
+  	{
+    	alert("Plese Enter Your Password");
+		document.getElementById("pass").focus();
+		return false;
+  	} 
+	else if(document.getElementById("cpass").value=="")
+	{
+		alert("Plese Enter Confirm Password");
+		document.getElementById("cpass").focus();
+		return false;
+  	}
+    else if(document.getElementById("pass").value!=document.getElementById("cpass").value)
+  	{
+    	alert("Confirm Password does not matched");
+		document.form1.cpass.focus();
+		return false;
+  	}
+ 	else if (document.getElementById("fname").value=="")
+	{
+		alert("Please enter first name");
+		document.getElementById("fname").focus();
+		return false;
+	}
+	else if (document.getElementById("lname").value=="")
+	{
+		alert("Please enter last name");
+		document.getElementById("lname").focus();
+		return false;
+	}
+	else if (document.getElementById("address").value=="")
+	{
+		alert("Please enter address");
+		document.getElementById("address").focus();
+		return false;
+	}
+	else if (document.getElementById("dateofbirth").value=="")
+	{
+		alert("Please Enter Date of Birth");
+		document.getElementById("dateofbirth").focus();
+		return false;
+	}
+	else if (document.getElementById("contact_no").value=="")
+	{
+		alert("Please Enter Contact No");
+		document.getElementById("contact_no").focus();
+		return false;
+	}
+	else if (document.getElementById("email").value=="")
+	{
+		alert("Please enter email");
+		document.getElementById("email").focus();
+		return false;
+	}
+	e=document.form1.email.value;
+		f1=e.indexOf('@');
+		f2=e.indexOf('@',f1+1);
+		e1=e.indexOf('.');
+		e2=e.indexOf('.',e1+1);
+		n=e.length;
+
+		if(!(f1>0 && f2==-1 && e1>0 && e2==-1 && f1!=e1+1 && e1!=f1+1 && f1!=n-1 && e1!=n-1))
+		{
+			alert("Please Enter valid Email");
+			document.form1.email.focus();
+			return false;
+		}
+  	return true;
+}
+
+</script>
+
+</head>
+
+<body>
+<form name="student" id="student" method="post" action="confirm.html" onsubmit="return validate()" >
+<table width="500" cellspacing="5" cellpadding="5" align="center">
+	<tr> 
+		<td colspan="2" align="center">Student Registration Form</td>
+	</tr>
+	
+	<tr>
+		<td>Enrollment ID</td>
+		<td><input type="text" name="id" id="id"></td> 
+	</tr> 
+	<tr>
+           <td class="style7">Password</td>
+           <td><input type="password" name="pass" id="pass"></td>
+         </tr>
+         <tr>
+           <td class="style7">Confirm Password </td>
+           <td><input name="cpass" type="password" id="cpass"></td>
+         </tr>
+	<tr> 
+		<td>first name</td>
+		<td><input type="text" name="fname" id="fname" /></td>
+	</tr> 
+	<tr> 
+		<td>last name</td>
+		<td><input type="text" name="lname" id="lname" /></td>
+	</tr>
+	<tr> 
+		<td>address</td>
+		<td><textarea name="address" id="address" /></textarea></td>
+	</tr>
+	<tr> 
+		<td>Date of Birth</td>
+		<td><input type="date" name="dateofbirth" id="dateofbirth"/></td>
+	</tr>
+	<tr> 
+		<td>Gender</td>
+		<td><input type="radio" name="gender" value="male" checked> Male
+  			<input type="radio" name="gender" value="female"> Female</td>
+	</tr>
+	
+	<tr> 
+		<td>contact no</td>
+		<td><input type="text" name="contact_no" id="contact_no" /></td>
+	</tr>
+	<tr> 
+		<td>email</td>
+		<td><input type="email" name="email" id="email" /></td>
+	</tr>
+	<tr>
+		<td align="center" colspan="2"><input type="submit" name="submit" id="submit" value="Submit" /></td>
+	</tr>
+</table>
+</form>
+</body>
+</html>

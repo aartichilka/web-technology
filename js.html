@@ -1,0 +1,23 @@
+<html>
+<head>
+<script language = "javascript">
+function validate()
+{
+	if(document.getElementById("name").value=="")
+	{
+		alert("Please enter a name");
+		document.getElementById("name").focus();	
+		return false;
+	}
+
+}
+</script>
+</head>
+<body>
+<form name="student" id="student" metnod="post" onsubmit="return validate()" action="js.html">
+name : <input type="text" name="name" id="name"/></br>
+passwrod : <input type="password" name="pass" id="pass">
+<input type="submit" name="submit" value="submit" id="submit"/>
+</form>
+</body>
+</html>

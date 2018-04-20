@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.mySlides {display:none;}
+</style>
+<link href="jquery-ui.css" rel="stylesheet" type="text/css">
+<style>
+            #custom-handle {
+                width: 3em;
+                height: 1.6em;
+                top: 50%;
+                margin-top: -.8em;
+                text-align: center;
+                line-height: 1.6em;
+            }
+</style>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+            $(function () {
+                var handle = $("#custom-handle");
+                $("#slider").slider({
+                    create: function () {
+                        handle.text($(this).slider("value"));
+                    },
+                    slide: function (event, ui) {
+                        handle.text(ui.value);
+                    }
+                });
+            });
+        </script>
+        <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>jQuery UI Datepicker - Default functionality</title>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+        $( function() {
+          $( "#datepicker" ).datepicker({
+                                            format: 'dd-mm-yyyy'
+                                        }); 
+        } );
+        </script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>jQuery UI Slider - Range slider</title>
+       <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+       <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
+        <script>
+
+            $(function () {
+                $("#slider-range").slider({
+                    range: true,
+                    min: 300,
+                    max: 25000,
+                    values: [300, 5000],
+                    slide: function (event, ui) {
+                        $("#amount").val("Rs." + ui.values[ 0 ] + " - Rs." + ui.values[ 1 ]);
+                    }
+                });
+                $("#amount").val("Rs." + $("#slider-range").slider("values", 0) +
+                        " - Rs." + $("#slider-range").slider("values", 1));
+
+                var availableTags = [
+                    "ActionScript",
+                    "AppleScript",
+                    "Asp",
+                    "BASIC",
+                    "C",
+                    "C++",
+                    "Clojure",
+                    "COBOL",
+                    "ColdFusion",
+                    "Erlang",
+                    "Fortran",
+                    "Groovy",
+                    "Haskell",
+                    "Java",
+                    "JavaScript",
+                    "Lisp",
+                    "Perl",
+                    "PHP",
+                    "Python",
+                    "Ruby",
+                    "Scala",
+                    "Scheme"
+                ];
+                $("ip_text").autocomplete(
+                        {
+                            source: availableTags
+                        });
+            });
+
+            function gebid(id)
+            {
+                return document.getElementById(id);
+            }
+
+            function addValue()
+            {
+                gebid('ip_select').options.add(new Option(gebid('ip_text').value));
+                gebid("ip_text").value = "";
+            }
+
+            function removeValue()
+            {
+                var i = gebid('ip_select').selectedIndex;
+                gebid("ip_select").options.remove(i);
+            }
+            
+            function selectAllPlaces()
+            {
+                var os=gebid('ip_select');
+                for(i=0;i<os.length;i++)
+                {
+                    var o=os[i];
+                    o.selected='selected';
+                }
+            }
+
+        </script>
+<head>
+<style>
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #000000;
+}
+
+li {
+    float: left;
+}
+
+li a, .dropbtn {
+    display : inline-block ;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: #009900;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.style2 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 18px;
+}
+</style>
+</head>
+<body>
+
+<ul>
+	<li class="dropdown">
+    	<a href="imageslideshow.html" class="dropbtn">
+		<span class="style2">ITINERARY PLANNER</span> <i style="font-size:14px"> The new way to plan your Trip</i></a>  	</li>
+    <li class="dropdown">
+    <a href="../user_registration.html" class="dropbtn" >Sign Up</a>
+  </li>
+  <li class="dropdown">
+    <a href="../user_login.html" class="dropbtn" >Sign In</a>
+  </li>
+  <li class="dropdown">
+    <a href="aboutus.html" class="dropbtn" >About us</a>
+  </li>
+</ul>
+<div class="w3-content w3-section" style="max-width:none" >
+  <img class="mySlides" src="image1.jpg" style="width:100%" height="600" >
+  <img class="mySlides" src="image2.jpg" style="width:100%" height="600">
+  <img class="mySlides" src="image3.jpg" style="width:100%" height="600">
+  <img class="mySlides" src="image4.jpg" style="width:100%" height="600">
+  <img class="mySlides" src="image5.jpg" style="width:100%" height="600">
+  <img class="mySlides" src="image6.jpg" style="width:100%" height="600">
+</div>
+<script>
+var myIndex = 0;
+carousel();
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+<table width="100%"  border="0"  height="500">
+<tr>
+<td width="43%">
+<p style="color:#FFFFFF">Hii!!!</p>
+</td>
+<td width="57%">
+<table width="600" border="0" background="img1.jpg" align="right" height="500" >
+<tr>
+                                <td class="style7" style="color:#FFFFFF"><b>Initial Place</b></td>
+                                <td><input type="text"/></td>
+        </tr>
+                            <tr >
+                                <td class="style7" style="color:#FFFFFF"><b>Budget</b></td>
+                                <td><p>
+                                        <label for="amount">Price range:</label>
+                                        <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                                    </p>
+
+                                    <div id="slider-range"></div></td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="style7" style="color:#FFFFFF"><b>No.of People</b></td>
+                                <td><div id="slider">
+                                        <div id="custom-handle" class="ui-slider-handle"></div>
+                                    </div></td>
+                            </tr>
+                            <tr>
+                                <td class="style7" style="color:#FFFFFF"><b> Duration</b> </td>
+                                <td><input type="text" name="duration" id="duration" /></td>
+
+                            </tr>
+                            <tr>
+                                <td class="style7" style="color:#FFFFFF"><b>Start Date(MM/DD/YYYY)</b></td>
+                                <td><input type="text" id="datepicker" name="sdate"></td>
+                                
+                            </tr>
+                            
+                            <tr>
+                                <td class="style7" style="color:#FFFFFF"><b>Interested Places</b></td>
+                                <td><input type="text" id="ip_text" autocomplete = "false"> </td>
+                                <td><button type="button" class="button" width = "120" name="add" value="add" onClick = "addValue()">Add Place</button></td>
+                                <td><select id="ip_select" name="place" multiple></select></td>
+                                <td><button type="button" class="button" width = "120" name="delete" value="delete" onClick = "removeValue()" >Remove Place</button></td>
+                            </tr>
+                            <tr>
+                                <td class="style7" style="color:#FFFFFF"><b>Transportation Mode</b></td>
+                                <td><select path = "trans_mode">
+                                        <option value="select_tp">--Select Transportation Mode--</form:option>
+                                        <option value="airport" >Flight</form:option>
+                                        <option value="railway_station">Railway</form:option>
+                                    <option value="bus_stand" >Bus</option>
+                        </select> </td>
+                </tr>
+                <tr>
+                    <td align="center" colspan="2"><input type="submit" value="Submit" onClick="selectAllPlaces();"></td>
+                </tr>
+      </table>
+</td>
+</tr>
+</table>
+
+</body>
+</html>
